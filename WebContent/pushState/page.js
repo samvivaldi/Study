@@ -16,6 +16,15 @@ $(document).ready(function() {
 	$(window).on('popstate', function(event) {
 		console.log(event);
 		console.log("location.href : " + location.href );
+		
+		console.log("state : " + history.state);
+		
+		if ( history.state != null) {
+			 console.log(history.state + ":" + history.state.href);
+			
+		}
+		
+		
 		$('article').load(location.href + ' article>.content');
 	});
 
