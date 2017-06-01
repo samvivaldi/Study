@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+ <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+        <script>
+            var c1 = new mojs.Shape({
+                shape:'circle',
+                radius:{0: 'rand(10, 50)'},
+                scale:0.5,
+                //left:'rand(0, 100%)',
+                //top:'rand(0, 100%)',
+                left:0,
+                top:0,
+                fill:'red',
+                stroke:'tomato',
+                strokeWidth: 'rand(1, 10)',
+                x:0,
+                y:0,
+                duration:'rand(200, 2000)',
+            });
+            
+            document.addEventListener('click', function(e) {
+            	//c1.play();
+            	//c1.replay();
+            	//c1.generate().replay();
+            	c1.generate().tune({x:e.pageX, y:e.pageY	}).replay();
+            	
+            });
+        </script>
+        
+</body>
+</html>
